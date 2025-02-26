@@ -25,7 +25,7 @@ public class AbsoluteDrive extends Command
   private final SwerveSubsystem swerve;
   private final DoubleSupplier  vX, vY;
   private final DoubleSupplier headingHorizontal, headingVertical;
-  private boolean initRotation = false;
+  private boolean initRotation = true;
 
   /**
    * Used to drive a swerve robot in full field-centric mode.  vX and vY supply translation inputs, where x is
@@ -87,7 +87,7 @@ public class AbsoluteDrive extends Command
         desiredSpeeds = swerve.getTargetSpeeds(0, 0, firstLoopHeading.getSin(), firstLoopHeading.getCos());
       }
       //Dont Init Rotation Again
-      initRotation = false;
+      initRotation = true;
     }
 
     // Limit velocity to prevent tippy
